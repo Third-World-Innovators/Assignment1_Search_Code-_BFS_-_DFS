@@ -1,41 +1,41 @@
-graph = {                           #graph is represented using an adjacency list dictionary data structure.
-  'S': ['c', 'd', 'e'],
-  'b': ['i', 'j', 'q'],
-  'c': ['e', 'q'],
-  'd': ['b'],
-  'e': ['f', 'h'],
-  'f': [],
-  'G': [],
-  'h': [],
-  'i': [],
-  'j': [],
-  'p': ['G'],
-  'q': ['G', 'p']
+graph = {
+    'Arab' : ['Sibia','Timisoara','Zerind'],
+    'Sibia' : ['Fagaras','Rimnica vilcea'],
+    'Fagaras' : ['Bucharest'],
+    'Rimnica vilcea' : ['Pitesti'],
+    'Pitesti' : ['Bucharest'],
+    'Timisoara':  ['Lugoj'],
+    'Lugoj':  ['Mehadia'],
+    'Mehadia':  ['Dobreta'],
+    'Dobreta':  ['Craiova'],
+    'Craiova':  ['Pitesti'],
+    'Zerind':  ['Oradea'],
+    'Oradea':  ['Sibia'],
+    'Bucharest': []
 }
 
 visited = [] # List to keep track of visited nodes.
 queue = []     #Initialize a queue
 h=[]
-def bfs(visited, graph, node):            #The arguments of the bfs function are the visited list,
-  visited.append(node)                    # the graph in the form of a dictionary, and the starting node A.
-  queue.append(node)
+def bfs(visited, graph, node):
+    visited.append(node)
+    queue.append(node)
 
-  while queue:
-    s = queue.pop(0) 
-    #print (s, end = " ")
-    h.append(s)
-    for neighbour in graph[s]:
-      if neighbour not in visited:
-        visited.append(neighbour)
-        queue.append(neighbour)
+    while queue:
+        s = queue.pop(0)
+        #print (s, end = " ")
+        h.append(s)
+        for neighbour in graph[s]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
 
 # Driver Code
-bfs(visited, graph, 'S')
+bfs(visited, graph, 'Arab')
 k=[]
 for i in h:
-    if i=='G':
+    if i=='Bucharest':
         k.append(i)
         break
     k.append(i)
-    
 print(k)
