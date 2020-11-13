@@ -24,7 +24,7 @@ def bfs_paths(graph, start, goal):
             else:
                 queue.append((next, path + [next]))
 
-x=list(bfs_paths(graph, 'Arab', 'Bucharest')) # [['A', 'C', 'F'], ['A', 'B', 'E', 'F']]
+x=list(bfs_paths(graph, 'Arab', 'Bucharest')) 
 yx=[]
 for o in x:
     yx.append(o)
@@ -35,7 +35,7 @@ def shortest_path(graph, start, goal):
     except StopIteration:
         return None
 
-x=shortest_path(graph,'Arab','Bucharest') # ['A', 'C', 'F']
+x=shortest_path(graph,'Arab','Bucharest') 
 y=[]
 for o in x:
     y.append(o)
