@@ -36,4 +36,5 @@ x=shortest_path(graph,'Arab','Lugoj') # ['A', 'C', 'F']
 y=[]
 for o in x:
     y.append(o)
-print (y)
+print ('The possible path(s) to Bucharest from Arab')
+print('The Shortest path is: %' (y))
