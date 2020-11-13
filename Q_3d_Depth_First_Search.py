@@ -23,7 +23,7 @@ def bfs_paths(graph, start, goal):
             else:
                 queue.append((next, path + [next]))
 
-x=list(bfs_paths(graph, 'S', 'G')) # [['A', 'C', 'F'], ['A', 'B', 'E', 'F']]
+x=list(bfs_paths(graph, 'S', 'G')) 
 yx=[]
 for o in x:
     yx.append(o)
