@@ -14,24 +14,24 @@ graph = {
     'Bucharest': set([])
 }
 
-def bfs_paths(graph, start, goal):
-    queue = [(start, [start])]
-    while queue:
-        (vertex, path) = queue.pop(0)
+def dfs_paths(graph, start, goal):
+    stack = [(start, [start])]
+    while stack:
+        (vertex, path) = stack.pop()
         for next in graph[vertex] - set(path):
             if next == goal:
                 yield path + [next]
             else:
-                queue.append((next, path + [next]))
+                stack.append((next, path + [next]))
 
-x=list(bfs_paths(graph, 'Arab', 'Bucharest')) 
+x=list(dfs_paths(graph, 'Arab', 'Bucharest'))
 yx=[]
 for o in x:
     yx.append(o)
 
 def shortest_path(graph, start, goal):
     try:
-        return next(bfs_paths(graph, start, goal))
+        return next(dfs_paths(graph, start, goal))
     except StopIteration:
         return None
 
